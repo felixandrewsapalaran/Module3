@@ -1,15 +1,15 @@
 /*
-Sort by the biggest numbers
+Sort by the biggest numbers to smallest and vice versa
 */
 
 const num = [5, 8, 2, 9, 3, 10];
 
-// Sort from less to greatest
+// Sort from smallest to biggest
 function sortNumbers1(a, b) {
     return a - b;
 }
 
-// Sort from less to greatest
+// Sort from biggest to smallest
 function sortNumbers2(a, b) {
     return b - a;
 }
