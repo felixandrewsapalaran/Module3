@@ -9,6 +9,7 @@ function findMaxHelper(numbers, start) {
 
     // set max value as the value of the first index
     let maximum = numbers[start];
+    let max_location = start;
     for (let i = start; i < numbers.length; i++) {
         // check if the current index value in the loop
         // is greater than what we set on maximum
@@ -20,7 +21,7 @@ function findMaxHelper(numbers, start) {
     }
     return {
         max_number: maximum,
-        max_index: max_location,
+        max_index: max_location
     }
 }
 
