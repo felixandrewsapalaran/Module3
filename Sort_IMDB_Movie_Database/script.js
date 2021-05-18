@@ -1,6 +1,6 @@
 /**
- * TODO: Change sortMoviesByRank() function to sort movies list by rank
- * TODO: Sort movies by id, rank, and title through dynamic function
+ * DONE: Change sortMoviesByRank() function to sort movies list by rank
+ * DONE: Sort movies by id, rank, and title through dynamic function
  * TODO: Create helper function called getMaxMovieObject() for finding max movie
  */
 
@@ -59,7 +59,10 @@ let movies = [
 ]
 
 window.onload = function() {
-    let sortedMovies = sortMoviesByRank(movies)
+    //let sortedMovies = sortMoviesByRank(movies)
+
+    // sort it by rank
+    let sortedMovies = sortMoviesByAttr(movies, 'id')
 
     // Display Movies list
     displayMovies(sortedMovies);
@@ -148,6 +151,22 @@ function displayMovies(movies){
  */
 function sortMoviesByAttr(movies, sortAttr){
   // CODE GOES HERE
+
+  for (let j = 0; j < movies.length - 1; j++){
+      let max_obj = movies[j];
+      let max_location = j;
+
+      for (let i = j; i < movies.length; i++) {
+          if (movies[i][sortAttr] > max_obj[sortAttr]){
+              max_obj = movies[i]
+              max_location = i
+          }
+      }
+
+      movies[max_location] = movies[j]
+      movies[j] = max_obj
+  }
+  return movies
 }
 
 
